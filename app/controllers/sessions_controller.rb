@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
   
   private
-  def lgoin(email, password)
+  def login(email, password)
     @user = User.find_by(email: email)
     if @user && @user.authenticate(password)
       session[:user_id] = @user.id
